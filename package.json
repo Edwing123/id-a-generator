@@ -1,6 +1,6 @@
 {
   "name": "id-a-generator",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "generate your custom id ",
   "keywords": ["javascript","nodejs","id","id generator","id-generator","id-a-generator","devamirgh"],
   "main": "index.js",
