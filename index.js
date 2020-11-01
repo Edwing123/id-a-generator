@@ -1,5 +1,7 @@
-const random = (from,to) => Math.floor(Math.random() *(to-from) + from);
-idGenerator = length => {
+const random = (from, to) => Math.floor(Math.random() * (to - from) + from);
+const idGenerator = (length) => {
+  if (!length || length <= 0 || isNaN(length))
+    throw new Error("specify a valid length");
   const keys = [
     [
       "q",
@@ -28,12 +30,13 @@ idGenerator = length => {
       "b",
       "n",
       "m",
-    ],[0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+    ],
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
   ];
   let id = "";
   for (let i = 0; i < length; i++) {
-        const keyList = keys[random(0,2)];
-        id += keyList[random(0, keyList.length)];
+    const keyList = keys[random(0, 2)];
+    id += keyList[random(0, keyList.length)];
   }
   return id;
 };
