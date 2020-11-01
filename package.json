@@ -2,18 +2,26 @@
   "name": "id-a-generator",
   "version": "1.0.0",
   "description": "generate your custom id ",
+  "keywords": ["javascript","nodejs","id","id generator","id-generator","id-a-generator","devamirgh"],
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch:js": "esw --fix --watch --ext .js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AmirGholizadeh/id-generator.git"
+    "url": "git+https://github.com/AmirGholizadeh/id-a-generator.git"
   },
   "author": "devamirgh",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AmirGholizadeh/id-generator/issues"
+    "url": "https://github.com/AmirGholizadeh/id-a-generator/issues"
   },
-  "homepage": "https://github.com/AmirGholizadeh/id-generator#readme"
+  "homepage": "https://github.com/AmirGholizadeh/id-a-generator#readme",
+  "devDependencies": {
+    "eslint": "^7.12.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-watch": "^7.0.0",
+    "prettier": "^2.1.2"
+  }
 }
