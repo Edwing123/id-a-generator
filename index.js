@@ -5,8 +5,24 @@ const idGenerator = (options) => {
   options.postId = options.postId ? options.postId : "";
   // ERRORS
   // valid length
-  if (!options.length || options.length <= 0 || isNaN(options.length))
+  if (
+    !options.length ||
+    options.length <= 0 ||
+    typeof options.length !== "number"
+  )
     throw new Error("specify a valid length");
+  // valid preId and postId
+  if (typeof options.preId !== "string")
+    throw new Error("value of option preId must be a string type");
+  if (typeof options.postId !== "string")
+    throw new Error("value of option postId must be a string type");
+  // valid keySets
+  if (options.number !== undefined && typeof options.number !== "boolean")
+    throw new Error("value of option number must be a boolean type");
+  if (options.uppercase !== undefined && typeof options.uppercase !== "boolean")
+    throw new Error("value of option uppercase must be a boolean type");
+  if (options.lowercase !== undefined && typeof options.lowercase !== "boolean")
+    throw new Error("value of option lowercase must be a boolean type");
   // at least one specified keyset
   if (!Object.values(options).includes(true))
     throw new Error(
