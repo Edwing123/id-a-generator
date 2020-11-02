@@ -1,5 +1,8 @@
 const random = (from, to) => Math.floor(Math.random() * (to - from) + from);
 const idGenerator = (options) => {
+  // DEAFULT
+  options.preId = options.preId ? options.preId : "";
+  options.postId = options.postId ? options.postId : "";
   // ERRORS
   // valid length
   if (!options.length || options.length <= 0 || isNaN(options.length))
@@ -46,11 +49,12 @@ const idGenerator = (options) => {
   if (options.uppercase) keySets.push(uppercase);
   if (options.numbers) keySets.push(numbers);
   // GENERATE
-  let id = "";
+  let id = `${options.preId}`;
   for (let i = 0; i < options.length; i++) {
     const keys = keySets[random(0, keySets.length)];
     id += keys[random(0, keys.length)];
   }
+  id = `${id}${options.postId}`;
   return id;
 };
 module.exports = idGenerator;
